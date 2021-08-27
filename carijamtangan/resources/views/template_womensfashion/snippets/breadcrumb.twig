@@ -1,0 +1,32 @@
+<div class="breadcrumb_dress">
+		<div class="container">
+			<ul>
+				
+				{% if IS_PAGE == 'CATEGORY' %}
+					<li><a href="{{BASE_URL}}/"><span class="glyphicon glyphicon-link" aria-hidden="true"></span> HOME </a><i>/</i></li>
+					<li>
+						<a href="{{BASE_URL}}/brand/watch/all-product">WATCH</a>
+						<i>/</i>
+					</li>
+					<li>{{ BREADCRUMB }}</a></li>
+
+				{% elseif IS_PAGE == 'DETAIL' %}	
+					<li><a href="{{BASE_URL}}/"><span class="glyphicon glyphicon-link" aria-hidden="true"></span> HOME </a><i>/</i></li>
+					<li>
+						<a href="{{BASE_URL}}/brand/watch/all-product">WATCH</a>
+						<i>/</i>
+					</li>
+					<li>
+						<a href="{{BASE_URL}}/brand/watch/{{DETAIL.CATEGORY_MERCH_SLUG}}">{{GET_NAME_MERCH}}</a>
+						<i>/</i>
+					</li>
+					
+					<li><small>{{ BREADCRUMB }}</small></a></li>
+
+
+
+				{% endif %}
+				
+			</ul>
+		</div>
+	</div>

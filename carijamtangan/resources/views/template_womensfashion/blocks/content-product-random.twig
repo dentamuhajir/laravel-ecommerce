@@ -1,0 +1,174 @@
+
+<div class="w3ls_dresses_grid_right_grid3">
+
+	{% for PRODUCT_ONE in GET_PRODUCT_ALL_ONE %}
+						<div class="col-md-4 agileinfo_new_products_grid agileinfo_new_products_grid_dresses_static" style=" {# border:1px dashed silver #}; height:480px;">
+						<div class="agile_ecommerce_tab_left dresses_grid"  >
+								<div class="hs-wrapper hs-wrapper2">
+
+							 <img src="{{BASE_URL}}/images/logo/image-placeholder.gif"  style="height:300px;" data-src="{{ BASE_URL  }}/timthumb.php?src=/photo/{{PRODUCT_ONE.PRODUCT_MAIN_IMAGE}}.jpg&h=298&w=224&zc=1" alt=" " class="img-responsive" /> 
+									{#   <img src="{{ BASE_URL }}/photo/{{PRODUCT.PRODUCT_MAIN_IMAGE}}_220x290.jpg" alt=" " class="img-responsive" />   #}
+								
+									<div class="w3_hs_bottom w3_hs_bottom_sub1">
+										<ul>
+											<li>
+
+												<a href="{{BASE_URL}}/detail/{{PRODUCT_ONE.PRODUCT_ID}}-{{PRODUCT_ONE.PRODUCT_NAME_SLUG}}.html"{#  data-toggle="modal" #} {# data-target="#myModal5" #}> <strong> Detail Produk </strong></a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							 
+							 
+								<h5><a href="{{BASE_URL}}/detail/{{PRODUCT_ONE.PRODUCT_ID}}-{{PRODUCT_ONE.PRODUCT_NAME_SLUG}}.html"><strong> {{PRODUCT_ONE.PRODUCT_NAME | upper }}</strong></a></h5>
+								 
+								<div class="simpleCart_shelfItem" >
+
+									<p>
+										{% if PRODUCT_ONE.PRODUCT_NO_DISCOUNT == 0 %}
+										<span>Rp {{(PRODUCT_ONE.PRODUCT_CJT_PRICE+PRODUCT_ONE.PRODUCT_PROFIT)|number_format(0, ',', '.')}}</span> 
+										{% endif %}
+
+											<i class="item_price"><sup>Rp</sup> {{PRODUCT_ONE.PRODUCT_CJT_PRICE|number_format(0, ',', '.')}}</i></p>
+									<p><a class="item_add" href="javascript:;"  data-base="{{BASE_URL}}"  data-id="{{PRODUCT_ONE.PRODUCT_CJT_CODE}}" data-name="{{PRODUCT_ONE.PRODUCT_NAME}}" data-picture="{{PRODUCT_ONE.PRODUCT_MAIN_IMAGE}}" data-price="{{PRODUCT_ONE.PRODUCT_CJT_PRICE}}">Add to cart</a></p>
+								</div>
+								{% if PRODUCT_ONE.PRODUCT_DATE_CREATED|date("Y-m-d") == "now"|date('Y-m-d') %}
+								<div class="dresses_grid_pos">
+									<h6>New</h6>
+								</div>
+								{% elseif PRODUCT_ONE.PRODUCT_HOT_SALE == 1 %}
+								<div class="dresses_grid_pos" style="background: #be1689;">
+									<h6>Sale</h6>
+								</div>
+  			   
+								{% endif %}
+								
+							</div>
+						</div>
+
+	{% endfor %}	
+</div>
+
+
+ 
+ 
+<div class="w3ls_dresses_grid_right_grid3" style="margin-bottom:20px;">
+
+	<div class="col-md-12" style="background: linear-gradient(90deg, rgb(199, 90, 227) 0%, rgb(108, 43, 200) 35%, rgb(204, 46, 172) 100%);padding-top:24px;">
+		<center><blink><a href="{{ BASE_URL }}/brand/watch/all-hot-sale"><h2 style="color:white;margin-bottom:26px;">HOT SALE !!! Selengkapnya Klik Aja Disini</h2></a></blink></center>
+	
+ 
+
+	{% for PRODUCT_HOT in GET_PRODUCT_HOT %}
+						<div class="col-md-4 agileinfo_new_products_grid agileinfo_new_products_grid_dresses_static" style=" {# border:1px dashed silver #}; height:480px; ">
+						<div class="agile_ecommerce_tab_left dresses_grid"  >
+								<div class="hs-wrapper hs-wrapper2">
+<img src="{{BASE_URL}}/images/logo/image-placeholder.gif" style="height:300px;" data-src="{{ BASE_URL  }}/timthumb.php?src=/photo/{{PRODUCT_HOT.PRODUCT_MAIN_IMAGE}}.jpg&h=310&w=230&zc=1" alt=" " class="img-responsive" /> 
+								 		{#   <img src="{{ BASE_URL }}/photo/{{PRODUCT.PRODUCT_MAIN_IMAGE}}_220x290.jpg" alt=" " class="img-responsive" />   #}
+								
+									<div class="w3_hs_bottom w3_hs_bottom_sub1">
+										<ul>
+											<li>
+
+												<a href="{{BASE_URL}}/detail/{{PRODUCT_HOT.PRODUCT_ID}}-{{PRODUCT_HOT.PRODUCT_NAME_SLUG}}.html"{#  data-toggle="modal" #} {# data-target="#myModal5" #}> <strong> Detail Produk</strong></a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							 
+							 
+								<h5><a href="{{BASE_URL}}/detail/{{PRODUCT_HOT.PRODUCT_ID}}-{{PRODUCT_HOT.PRODUCT_NAME_SLUG}}.html"><strong>{{PRODUCT_HOT.PRODUCT_NAME | upper }}</strong></a></h5>
+								 
+								<div class="simpleCart_shelfItem" >
+
+									<p>
+										{% if PRODUCT_HOT.PRODUCT_NO_DISCOUNT == 0 %}
+										<span><strong>Rp {{(65000+PRODUCT_HOT.PRODUCT_CJT_PRICE+PRODUCT_HOT.PRODUCT_PROFIT)|number_format(0, ',', '.')}}</strong></span> 
+										{% endif %}
+
+											<i class="item_price"><sup>Rp</sup> {{PRODUCT_HOT.PRODUCT_CJT_PRICE|number_format(0, ',', '.')}}</i></p>
+									<p><a class="item_add" href="javascript:;"  data-base="{{BASE_URL}}"  data-id="{{PRODUCT_HOT.PRODUCT_CJT_CODE}}" data-name="{{PRODUCT_HOT.PRODUCT_NAME}}" data-picture="{{PRODUCT_HOT.PRODUCT_MAIN_IMAGE}}" data-price="{{PRODUCT_HOT.PRODUCT_CJT_PRICE}}">Add to cart</a></p>
+								</div>
+								{% if PRODUCT_HOT.PRODUCT_TODAY_NEW == 1 %}
+								<div class="dresses_grid_pos">
+									<h6>New</h6>
+								</div>
+								{% elseif PRODUCT_HOT.PRODUCT_HOT_SALE == 1 %}
+								<div class="dresses_grid_pos" style="background: #be1689;">
+									<h6>Sale</h6>
+								</div>
+  			   
+								{% endif %}
+								
+							</div>
+						</div>
+	     {% endfor %}	
+    </div>
+	<div class="col-md-12" style="padding-top:15px;"></div>
+  </div>
+
+
+
+
+  <div class="w3ls_dresses_grid_right_grid3">
+
+	{% for PRODUCT_TWO in GET_PRODUCT_ALL_TWO %}
+						<div class="col-md-4 agileinfo_new_products_grid agileinfo_new_products_grid_dresses" style=" {# border:1px dashed silver #}; height:480px;display:none;">
+						<div class="agile_ecommerce_tab_left dresses_grid"  >
+								<div class="hs-wrapper hs-wrapper2">
+
+								<img src="{{BASE_URL}}/images/logo/image-placeholder.gif" style="height:300px;" data-src="{{ BASE_URL  }}/timthumb.php?src=/photo/{{PRODUCT_TWO.PRODUCT_MAIN_IMAGE}}.jpg&h=310&w=230&zc=1" alt=" " class="img-responsive" />  
+									{#   <img src="{{ BASE_URL }}/photo/{{PRODUCT.PRODUCT_MAIN_IMAGE}}_220x290.jpg" alt=" " class="img-responsive" />   #}
+								
+									<div class="w3_hs_bottom w3_hs_bottom_sub1">
+										<ul>
+											<li>
+
+												<a href="{{BASE_URL}}/detail/{{PRODUCT_TWO.PRODUCT_ID}}-{{PRODUCT_TWO.PRODUCT_NAME_SLUG}}.html"{#  data-toggle="modal" #} {# data-target="#myModal5" #}> <strong>Detail Produk</strong></a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							 
+							 
+								<h5><a href="{{BASE_URL}}/detail/{{PRODUCT_TWO.PRODUCT_ID}}-{{PRODUCT_TWO.PRODUCT_NAME_SLUG}}.html"><strong>{{PRODUCT_TWO.PRODUCT_NAME | upper }}</strong></a></h5>
+								 
+								<div class="simpleCart_shelfItem" >
+
+									<p>
+										{% if PRODUCT_TWO.PRODUCT_NO_DISCOUNT == 0 %}
+										<span>Rp {{(PRODUCT_TWO.PRODUCT_CJT_PRICE+PRODUCT_TWO.PRODUCT_PROFIT)|number_format(0, ',', '.')}}</span> 
+										{% endif %}
+
+											<i class="item_price"><sup>Rp</sup> {{PRODUCT_TWO.PRODUCT_CJT_PRICE|number_format(0, ',', '.')}}</i></p>
+									<p><a class="item_add" href="javascript:;"  data-base="{{BASE_URL}}"  data-id="{{PRODUCT_TWO.PRODUCT_CJT_CODE}}" data-name="{{PRODUCT_TWO.PRODUCT_NAME}}" data-picture="{{PRODUCT_TWO.PRODUCT_MAIN_IMAGE}}" data-price="{{PRODUCT_TWO.PRODUCT_CJT_PRICE}}">Add to cart</a></p>
+								</div>
+								{% if PRODUCT_TWO.PRODUCT_DATE_CREATED|date("Y-m-d") == "now"|date('Y-m-d') %}
+								<div class="dresses_grid_pos">
+									<h6>New</h6>
+								</div>
+								{% elseif PRODUCT_TWO.PRODUCT_HOT_SALE == 1 %}
+								<div class="dresses_grid_pos" style="background: #be1689;">
+									<h6>Sale</h6>
+								</div>
+  			   
+								{% endif %}
+								
+							</div>
+						</div>
+
+	{% endfor %}	
+
+
+
+		<div class="clearfix"> </div>
+				<div class="moveHere"> </div>
+				<br/>
+ 
+	<div class="simpleCart_shelfItem" style="margin-top:30px;{# border:1px dashed black; #}" >	
+			<center><p><a href="#" id="loadMore">Tampilkan lebih banyak</a></p></center>
+	</div>
+</div>
+
+
+  

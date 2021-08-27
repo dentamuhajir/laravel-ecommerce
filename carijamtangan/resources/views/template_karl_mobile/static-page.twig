@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title  -->
+    <title>Cari Jam Tangan</title>
+
+    <!-- Favicon  -->
+    <link rel="icon" href="/mobile-assets/img/core-img/favicon.ico">
+
+    <!-- Core Style CSS -->
+
+    <link rel="stylesheet" href="{{ BASE_URL }}/css/nprogress.css" media="none" onload="if(media!=='all')media='all'" >
+    <link rel="stylesheet" href="{{ BASE_URL }}/css/animate.min.css" media="none" onload="if(media!=='all')media='all'" >
+    <script defer src="{{ BASE_URL }}/js/nprogress.js"></script>
+    <link rel="stylesheet" href="{{ BASE_URL }}/mobile-assets/css/core-style.css">
+    <link rel="stylesheet" href="{{ BASE_URL }}/mobile-assets/style.css">
+
+    <!-- Responsive CSS -->
+    <link href="{{ BASE_URL }}/mobile-assets/css/responsive.css" rel="stylesheet">
+    
+    <style>
+    .beli {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 50%;
+        text-align: center;
+        padding: 10px 0;
+        background-color: #ef6907;
+        color: white;
+        font-weight: 800;
+        z-index: 99;
+    }
+    .chat{
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 50%;
+        text-align: center;
+        padding: 10px 0;
+        background-color: #51c551;
+        color: white;
+        font-weight: 800;
+        z-index: 99;
+    }
+    </style>
+
+</head>
+
+<body>
+
+	{% include "template_karl_mobile.blocks.menubar" %}
+
+	<div id="wrapper">
+
+		{% include "template_karl_mobile.blocks.header" %}
+	
+		{% include "template_karl_mobile.snippets.breadcrumb" %}
+   
+ 		{% if IS_PAGE == 'THANKS YOU' %}
+
+        <div style="padding: 0 65px;">
+            <center><img src="{{BASE_URL}}/images/logo/thank-you.png"/></center>
+            <center><strong><p style="font-size:40px;font-weight:800pt;" >TERIMA KASIH!</p></strong></center>
+            <center><strong><p style="font-size:18px;font-weight:30pt;" >Kami akan segera mengirim invoice ke email {{ CUST_EMAIL }}  & pesan ke no {{ CUST_PONSEL }}</p></strong></center>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <input type="hidden" id="base" value="{{BASE_URL}}"   />
+        <input type="hidden" id="hash"  value="{{HASH_GENERATE}}" />
+        {% elseif IS_PAGE == 'FAQ' %}
+            {% include "template_womensfashion.blocks.faq" %}
+        {% elseif IS_PAGE == 'ABOUTUS' %}
+
+        <div class="faq">
+        <div class="container"> 
+            <div class="w3l_faq_grids">
+                <h1>Tentang Kami </h1>
+                <br/>
+                <div class="w3l_faq_grid">
+                     <p style="font-size:13pt;"><b>CARI JAM TANGAN DOT COM </b>merupakan distributor jam tangan berbagai Merek/Brand dengan beragam model dari Jam Digital, Jam Analog, Jam Sport, <i>Smart Watch</i> dari mulai produk original maupun KW semua tersedia.</p>
+
+                     <ul style="list-style: square outside none;">
+                        <li>Kami senantiasa memberikan pelayanan terbaik lewat customer service kami yang siap menerima pertanyaan dari anda selama jam kerja</li>
+                        <li>Kami memberikan garansi pengembalian uang jika barang tidak sesuai / rusak selama pengiriman sesuai ketentuan yang berlaku.</li>
+                    </ul>
+       
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{# 
+                    <div class="col-xs-2 w3ls_about_grid_left1">
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                    </div>
+                    <div class="col-xs-10 w3ls_about_grid_left2">
+                        <p style="font-size:13pt;">Kami senantiasa memberikan pelayanan terbaik lewat customer service kami yang siap menerima pertanyaan dari anda selama jam kerja</p>
+                    </div>
+                    <div class="clearfix"> </div>
+                    <div class="col-xs-2 w3ls_about_grid_left1">
+                        <span class="glyphicon glyphicon-usd" aria-hidden="true"></span>
+                    </div>
+                    <div class="col-xs-10 w3ls_about_grid_left2">
+                        <p style="font-size:13pt;">Kami memberikan garansi pengembalian uang jika barang tidak sesuai / rusak selama pengiriman sesuai ketentuan yang berlaku.</p>
+                    </div>
+                    <div class="clearfix"> </div>
+ #}
+        {% endif %}
+
+
+
+        {# {% include "template_karl_mobile.snippets.related-product" %} #}
+        
+        {% include "template_karl_mobile.blocks.footer" %}
+	
+	</div>
+
+
+   <!-- jQuery (Necessary for All JavaScript Plugins) -->
+    <script src="{{ BASE_URL }}/mobile-assets/js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="{{ BASE_URL }}/mobile-assets/js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="{{ BASE_URL }}/mobile-assets/js/bootstrap.min.js"></script>
+    <!-- Plugins js -->
+    <script src="{{ BASE_URL }}/mobile-assets/js/plugins.js"></script>
+    <!-- Active js -->
+    <script src="{{ BASE_URL }}/mobile-assets/js/active.js"></script>
+<script>
+
+    $(document).ready(function() {
+
+
+    function cartAnimation(x) {
+        $('#animation-cart').removeClass().addClass(x + ' animated delay-10s').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+            $(this).removeClass();
+        });
+    };
+
+       $('.beli').on('click', function () {
+        // NProgress.start();
+        var baseUrl = $(this).data('base');
+		var price = $(this).data('price');
+ 		var id  = $(this).data('id');
+		var name = $(this).data('name');
+		var picture = $(this).data('picture'); 
+
+		$.ajax({
+			type: "GET",
+			url: baseUrl + '/add/cart/'+price+'/'+id+'/'+name+'/'+picture,
+			success: function( msg ) {
+				if(msg!='add to cart'){
+					NProgress.done();
+					alert(msg);
+	            }
+				else{
+
+					
+             $('html, body').animate({
+                scrollTop: $(".header_area").offset().top
+            }, 400);
+             cartAnimation("rubberBand");
+					$(".total").load(" .total");						            
+					NProgress.done();
+				}			
+			}
+		}); 
+        });
+    });
+
+    </script>
+</body>
+</html>
+
+

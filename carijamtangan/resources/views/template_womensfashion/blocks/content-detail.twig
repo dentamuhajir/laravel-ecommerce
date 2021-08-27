@@ -1,0 +1,78 @@
+<div class="single">
+		<div class="container">
+			<div class="col-md-5 single-left" {# style="border:1px dashed black" #}>
+				 
+				<div class="flexslider">
+					<ul class="slides">
+						<li data-thumb="{{BASE_URL}}/photo/{{DETAIL.PRODUCT_MAIN_IMAGE}}.jpg">
+							<div class="thumb-image"> <img data-src="{{BASE_URL}}/photo/{{DETAIL.PRODUCT_MAIN_IMAGE}}.jpg" data-imagezoom="true" class="img-responsive"> </div>
+						</li>
+					</ul>
+				</div>
+				<!-- flixslider -->
+					<script defer src="{{BASE_URL}}/js/jquery.flexslider.js"></script>
+					<link rel="stylesheet" href="{{BASE_URL}}/css/flexslider.css" type="text/css" media="screen" />
+					<script>
+					// Can also be used with $(document).ready()
+					$(window).load(function() {
+					  $('.flexslider').flexslider({
+						animation: "slide",
+						controlNav: "thumbnails"
+					  });
+					});
+					</script>
+				<!-- flixslider -->
+				<!-- zooming-effect -->
+					<script src="{{BASE_URL}}/js/imagezoom.js"></script>
+				<!-- //zooming-effect -->
+			 
+			</div>
+			<div class="col-md-7 single-right">
+				<h2><strong>{{ DETAIL.PRODUCT_NAME }}</strong></h2>
+			 
+				<div class="rating1">
+
+					<div class="agileits_social_button" style="padding-top:10px;">
+						<ul>
+							<li><a href="#" class="facebook"> </a></li>
+							<li><a href="#" class="twitter"> </a></li>
+							<li><a href="#" class="google"> </a></li>
+							<li><a href="#" class="pinterest"> </a></li>
+						</ul>
+					</div>
+					 
+				</div>
+					<div class="description">
+						<h5><big><b><i>Deskripsi</i></b></big></h5>
+						<p style="font-size:13.8pt;">{{ DETAIL.PRODUCT_DESCRIPTION | trim('</p> </div> </div> </div> </div> <div id=".') | raw }}.</p>
+					</div>
+					<div class="simpleCart_shelfItem"  >
+							<p><big><span>Rp {{(DETAIL.PRODUCT_CJT_PRICE+DETAIL.PRODUCT_PROFIT)|number_format(0, ',', '.')}}</span></big> <big><i class="item_price"><sup>Rp</sup> {{DETAIL.PRODUCT_CJT_PRICE|number_format(0, ',', '.')}},00</i></big><a style="float:right;border-radius:1px"> Code Product : CJ-{{  DETAIL.PRODUCT_ID }}{{ GET_NAME_MERCH |slice(0, 3) }}  </a></p>
+							<p><a style="   font-size: 22px;
+    color: #ffffff;
+    background-color: orange;
+    padding: 0.5em 2em;
+    border: none;
+     " class="item_add" href="javascript:;"  data-base="{{BASE_URL}}"  data-id="{{DETAIL.PRODUCT_CJT_CODE}}" data-name="{{DETAIL.PRODUCT_NAME}}" data-picture="{{DETAIL.PRODUCT_MAIN_IMAGE}}" data-price="{{DETAIL.PRODUCT_CJT_PRICE}}">Add to cart</a></p>
+						</div>
+
+
+			<div class="col-md-12" style="background:whitesmoke;padding-top:10px;padding-left:30px;padding-bottom:10px;margin-top:14px;">
+				<div class="col-md-6">
+				<h5> <b>Order Via Customer Service Kami : </b></h5>
+				<h6> - SMS / Whatsapp : 081 385 800 400</h6>
+				<h6> - BBM : JMTG24</h6>
+			</div>
+			<div class="col-md-6">
+				 
+				<h5> <b>Format Pemesanan : </b></h5>
+				<h6> &nbsp;NAMA # KODE PRODUK # NO HP # ALAMAT </h6>
+				 </div>
+				 
+			</div> 
+
+			</div>
+
+			<div class="clearfix"> </div>
+		</div>
+	</div>

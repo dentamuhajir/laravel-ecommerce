@@ -1,0 +1,53 @@
+<div class="w3ls_dresses_grid_right_grid3">
+
+	{% for PRODUCT in GET_PRODUCT %}
+				 						<div class="col-md-4 agileinfo_new_products_grid agileinfo_new_products_grid_dresses" style=" {# border:1px dashed silver #}; height:480px;display:none;">
+						<div class="agile_ecommerce_tab_left dresses_grid"  >
+								<div class="hs-wrapper hs-wrapper2">
+									  <img src="{{BASE_URL}}/images/logo/image-placeholder.gif" style="height:300px;"data-src="{{ BASE_URL  }}/timthumb.php?src=/photo/{{PRODUCT.PRODUCT_MAIN_IMAGE}}.jpg&h=298&w=224&zc=1" alt=" " class="img-responsive" />  
+{# 
+									<img src="{{ BASE_URL }}/photo/{{PRODUCT.PRODUCT_MAIN_IMAGE}}_220x290.jpg" alt=" " class="img-responsive" />  #}
+								
+									<div class="w3_hs_bottom w3_hs_bottom_sub1">
+										<ul>
+											<li>
+												<a href="{{BASE_URL}}/detail/{{PRODUCT.PRODUCT_ID}}-{{PRODUCT.PRODUCT_NAME_SLUG}}.html"> <strong> Detail Produk</strong></a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							 
+							 
+								<h5><a href="{{BASE_URL}}/detail/{{PRODUCT.PRODUCT_ID}}-{{PRODUCT.PRODUCT_NAME_SLUG}}.html"><strong>{{PRODUCT.PRODUCT_NAME | upper}}</strong></a></h5>
+								 
+								<div class="simpleCart_shelfItem" >
+
+									<p>
+										{% if PRODUCT.PRODUCT_NO_DISCOUNT == 0 %}
+										<span>Rp {{(PRODUCT.PRODUCT_CJT_PRICE+PRODUCT.PRODUCT_PROFIT)|number_format(0, ',', '.')}}</span> 
+										{% endif %}
+
+											<i class="item_price"><sup>Rp</sup> {{PRODUCT.PRODUCT_CJT_PRICE|number_format(0, ',', '.')}}</i></p>
+									<p><a class="item_add" href="javascript:;"  data-base="{{BASE_URL}}"  data-id="{{PRODUCT.PRODUCT_CJT_CODE}}" data-name="{{PRODUCT.PRODUCT_NAME}}" data-picture="{{PRODUCT.PRODUCT_MAIN_IMAGE}}" data-price="{{PRODUCT.PRODUCT_CJT_PRICE}}">Add to cart</a></p>
+								</div>
+								{% if PRODUCT.PRODUCT_DATE_CREATED|date("Y-m-d") == "now"|date('Y-m-d') %}
+								<div class="dresses_grid_pos">
+									<h6>New</h6>
+								</div>
+  			   
+								{% endif %}
+								
+							</div>
+						</div>
+	{% endfor %}	
+
+			 
+						<div class="clearfix"> </div>
+				<div class="moveHere"> </div>
+				<br/>
+ 
+	<div class="simpleCart_shelfItem" style="margin-top:30px;{# border:1px dashed black; #}" >	
+			<center><p><a href="#" id="loadMore2">Tampilkan lebih banyak</a></p></center>
+	</div>
+</div>
+

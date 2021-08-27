@@ -1,0 +1,36 @@
+ 
+       <div class="breadcumb_area" style="padding-top:0px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        {% if IS_PAGE == 'CATEGORY' %}
+                        <ol class="breadcrumb d-flex align-items-center">
+                            <li class="breadcrumb-item"><a href="{{ BASE_URL }}/">Home</a></li>
+                            <li class="breadcrumb-item"><a href="{{ BASE_URL }}/brand/watch/all-product">Watch</a></li>
+                            <li class="breadcrumb-item active">{{ GET_NAME_MERCH }}</li>
+                        </ol>
+                        {% elseif IS_PAGE == 'DETAIL' %}
+                        <ol class="breadcrumb d-flex align-items-center">
+                            <li class="breadcrumb-item"><a href="{{ BASE_URL }}/"><strong>Home</strong></a></li>
+                            <li class="breadcrumb-item"><a href="{{ BASE_URL }}/brand/watch/all-product"><strong>Watch</strong></a></li>
+                            <li class="breadcrumb-item"><a href="{{BASE_URL}}/brand/watch/{{DETAIL.CATEGORY_MERCH_SLUG}}"><strong>{{ GET_NAME_MERCH | capitalize }}</strong></a></li>
+                            <li class="breadcrumb-item active">Detail</li>
+                        </ol>
+                        {% elseif IS_PAGE == 'CART' %}
+                        <ol class="breadcrumb d-flex align-items-center">
+                            <li class="breadcrumb-item"><a href="{{ BASE_URL }}/">Home</a></li>
+                            <li class="breadcrumb-item active">Keranjang Belanja</li>
+                        </ol>
+                        {% elseif IS_PAGE == 'FORMBILL' %}
+                        <ol class="breadcrumb d-flex align-items-center">
+                            <li class="breadcrumb-item"><a href="{{ BASE_URL }}/">Home</a></li>
+                            <li class="breadcrumb-item"><a href="{{ BASE_URL }}/keranjang-belanja">Keranjang Belanja</a></li>
+                            <li class="breadcrumb-item active">Checkout</li>
+                        </ol>
+                        {% endif %}
+
+                        <!-- btn --> 
+                    </div>
+                </div>
+            </div>
+        </div>

@@ -1,0 +1,43 @@
+     <div class="catagories-side-menu">
+        <!-- Close Icon -->
+        <div id="sideMenuClose">
+            <i class="ti-close"></i>
+        </div>
+        <!--  Side Nav  -->
+        <div class="nav-side-menu">
+            <div class="menu-list" style="margin-top: 0px;">
+                <h6 style='padding: 16px 15px;background: linear-gradient(90deg, #495057 0%, #721c24 35%, #242a2f 100%);
+    color: white;'>Brands / Merch</h6>
+                <div class="scrolling-menubar" style="height:500px;overflow:auto;">
+                <ul id="menu-content" class="menu-content collapse out">
+                    <!-- Single Item -->
+              
+                    <!-- Single Item -->
+                    {% for MERCH in GET_MERCH %}
+
+                    <li data-toggle="collapse" data-target="#man" class="collapsed">
+                        <a href="{{ BASE_URL }}/brand/{{ MERCH.CATEGORY_NAME_SLUG|lower }}/{{ MERCH.CATEGORY_MERCH_SLUG|lower }}/"> 
+
+                          {% set twig_content_variable =  MERCH.CATEGORY_MERCH %}
+              {% set replace_value_var =  'ORIGINAL' %}
+              {% set replace_with_value_var =  ' ' %}
+                {{ twig_content_variable|replace({ (replace_value_var): replace_with_value_var }) }}
+                {% if MERCH.CATEGORY_ORIGINAL == 1 %}
+                   <small style='    background-color: red;
+    color: white;
+    font-weight: 700;
+    padding: 4px;
+    border-radius: 8px;'><label class="label label-danger">ORIGINAL</label ></small>    
+                {% endif %} 
+                  </a>
+                        
+                    </li>
+                    {% endfor %}
+                
+                    <!-- Single Item -->
+                    
+                </ul>
+            </div>
+            </div>
+        </div>
+    </div>

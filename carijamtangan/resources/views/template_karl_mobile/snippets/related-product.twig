@@ -1,0 +1,39 @@
+  <section class="you_may_like_area clearfix">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section_heading text-center">
+                            <h2>related Products</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="you_make_like_slider owl-carousel">
+                            {% for RELATED in RELATED_PRODUCT %}
+                            <!-- Single gallery Item -->
+                            <div class="single_gallery_item">
+                                <!-- Product Image -->
+                                <div class="product-img">
+                                    <img src="{{ BASE_URL }}/timthumb.php?src={{ BASE_URL }}/photo/{{RELATED.PRODUCT_MAIN_IMAGE}}.jpg&h=300&w=300&zc=1" alt="">
+                                    <div class="product-quicview">
+                                        <a href="{{BASE_URL}}/detail/{{RELATED.PRODUCT_ID}}-{{RELATED.PRODUCT_NAME_SLUG}}.html"><i class="ti-angle-right"></i></a>
+                                    </div>
+                                </div>
+                                <!-- Product Description -->
+                                <div class="product-description" style="">
+                                        <h5 style="text-decoration: line-through;text-align: center;color:silver;font-weight:500;">Rp {{(RELATED.PRODUCT_CJT_PRICE+RELATED.PRODUCT_PROFIT)|number_format(0, ',', '.')}}</h5>
+                                        <h4 class="product-price"><center style="color: #212121;font-family:'Open Sans';"><b>Rp {{RELATED.PRODUCT_CJT_PRICE|number_format(0, ',', '.')}}</b></center></h4>
+                                        <p ><a href="{{BASE_URL}}/detail/{{RELATED.PRODUCT_ID}}-{{RELATED.PRODUCT_NAME_SLUG}}.html"><center style="color:#FF9B05;font-weight:600;margin-bottom:9px;">{{RELATED.PRODUCT_NAME | upper}}</center></a></p>
+                                        <!-- Add to Cart -->
+                                      <center><a href="javascript:;"  data-base="{{BASE_URL}}"  data-id="{{RELATED.PRODUCT_CJT_CODE}}" data-name="{{RELATED.PRODUCT_NAME}}" data-picture="{{RELATED.PRODUCT_MAIN_IMAGE}}" data-price="{{RELATED.PRODUCT_CJT_PRICE}}" class="beli" style="font-size: 14px;color: #212121;border: 1px solid;border-radius: 25px;    padding: .5em 1.9em;margin-top:5px;">ADD TO CART</a>  </center>
+                                    </div>
+                            </div>
+
+                        {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>

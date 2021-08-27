@@ -1,0 +1,70 @@
+<section class="shop_grid_area section_padding_100" style="padding: 0px 0;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-4 col-lg-3">
+                        <div class="shop_sidebar_area">
+
+
+                             <h4 class="title" style="margin-top:-18px;">{{ GET_NAME_MERCH }} ({{ GET_PRODUCT|length }})</h4>
+                             
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-8 col-lg-9" style="margin-top:0px;transform:translateY(-85px);">
+                        <div class="shop_grid_product_area">
+                            <div class="row">
+
+                                <!-- Single gallery Item -->
+
+                                {% for PRODUCT in GET_PRODUCT %}
+
+                              <div class="col-6 col-sm-6 col-lg-4 single_gallery_item wow fadeInUpBig" data-wow-delay="0.2s" style="background-color:#fafafa;;margin-bottom:0px;padding:0px;border:2px solid white;padding-bottom:18px;">
+                                    <!-- Product Image -->
+                                    <div class="product-img">
+                                        <img src="{{BASE_URL}}/images/logo/image-placeholder.gif" style="height:210px;" data-src="{{ BASE_URL  }}/timthumb.php?src=/photo/{{PRODUCT.PRODUCT_MAIN_IMAGE}}.jpg&h=210&w=176&zc=1" alt="">
+                                        <div class="product-quicview">
+                                            <a href="{{BASE_URL}}/detail/{{PRODUCT.PRODUCT_ID}}-{{PRODUCT.PRODUCT_NAME_SLUG}}.html"><i class="ti-angle-right"></i></a>
+                                        </div>
+                                    </div>
+                                    <!-- Product Description -->
+                                    <div class="product-description" style="">
+                                    	<h5 style="text-decoration: line-through;text-align: center;color:silver;font-weight:500;">Rp {{(PRODUCT.PRODUCT_CJT_PRICE+PRODUCT.PRODUCT_PROFIT)|number_format(0, ',', '.')}}</h5>
+                                        <h4 class="product-price"><center style="color: #212121;font-family:'Open Sans';"><b>Rp {{PRODUCT.PRODUCT_CJT_PRICE|number_format(0, ',', '.')}}</b></center></h4>
+                                        <a href="{{BASE_URL}}/detail/{{PRODUCT.PRODUCT_ID}}-{{PRODUCT.PRODUCT_NAME_SLUG}}.html"><p ><center style="color:#FF9B05;font-weight:600;margin-bottom:9px;">{{PRODUCT.PRODUCT_NAME | upper}}</center></p></a>
+                                        <!-- Add to Cart -->
+                                      <center><a href="javascript:;"  data-base="{{BASE_URL}}"  data-id="{{PRODUCT.PRODUCT_CJT_CODE}}" data-name="{{PRODUCT.PRODUCT_NAME}}" data-picture="{{PRODUCT.PRODUCT_MAIN_IMAGE}}" data-price="{{PRODUCT.PRODUCT_CJT_PRICE}}" class="beli" style="font-size: 14px;color: #212121;border: 1px solid;border-radius: 25px;    padding: .5em 1.9em;margin-top:5px;">ADD TO CART</a>  </center>
+                                    </div>
+                                </div>
+                                    {% endfor %}    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+         <section class="top-discount-area d-md-flex align-items-center">
+        <div class="single-discount-area" style="">
+                <h5>Diskon Sampe 40 %</h5>
+                <h6>HOT SALE BURUAN !! Klik Disini </h6>
+            </div>
+        </section>
+
+        
+            <section class="top_catagory_area d-md-flex clearfix">
+        {#         <!-- Single Catagory -->
+                 <div class="single_catagory_area d-flex align-items-center bg-img" style="background-image: url(/mobile-assets/img/bg-img/bg-2.jpg);">
+                    <div class="catagory-content">
+                        <h6>On Accesories</h6>
+                        <h2>Sale 30%</h2>
+                        <a href="#" class="btn karl-btn">SHOP NOW</a>
+                    </div>
+                </div> 
+                <!-- Single Catagory --> #}
+                <div class="single_catagory_area d-flex align-items-center bg-img" style="background-image:url('https://data.whicdn.com/images/232803918/large.png');">
+                    <div class="catagory-content">
+                        <h6>Koleksi Jam Sepasang buat yang tercinta</h6>
+                        <h2>Couple Watch</h2>
+                        <a href="#" class="btn karl-btn">SHOP NOW</a>
+                    </div>
+                </div>
+            </section>

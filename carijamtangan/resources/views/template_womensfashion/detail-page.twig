@@ -1,0 +1,248 @@
+<!--
+Author: Denta Zamzam Yasin Muhajir
+Create Date : Kestalan, 19/06/2018
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Detail</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Jam Tangan, Cari Jam Tangan, Cari Jam Branded, Cari Jam Tangan Murah, 
+Cari Jam Tangan Branded Murah" />
+
+<!-- for FF, Chrome, Opera -->
+<link rel="icon" type="image/png" href="/images/logo/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/images/logo/favicon-32x32.png" sizes="32x32">
+
+
+<meta property="og:url" content="https://www.carijamtangan.com/" />
+<meta property="og:site_name" content="Cari Jam Tangan" />
+<meta property="og:title" content="{{ DETAIL.PRODUCT_NAME }}" />
+<meta property="og:description" content="Situs Belanja Jam Tangan Termurah dan terlengkap" />
+
+
+<meta content='{{ BASE_URL  }}/photo/{{DETAIL.PRODUCT_MAIN_IMAGE}}.jpg' property='og:image'>
+
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="{{ BASE_URL }}/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+
+
+<link href="{{ BASE_URL }}/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="{{ BASE_URL }}/css/fasthover.css" media="none" onload="if(media!=='all')media='all'" >
+
+<link rel="stylesheet" href="{{ BASE_URL }}/css/nprogress.css" media="none" onload="if(media!=='all')media='all'" >
+
+<link rel="stylesheet" href="{{ BASE_URL }}/css/animate.min.css" media="none" onload="if(media!=='all')media='all'" >
+ 
+<!-- js -->
+
+<!-- js -->
+<script src="{{ BASE_URL }}/js/jquery.min.js"></script>
+<script defer src="{{ BASE_URL }}/js/nprogress.js"></script>
+<!-- //js -->
+<!-- cart -->
+<script defer src="{{ BASE_URL }}/js/simpleCart.min.js"></script>
+<!-- cart -->
+<!-- for bootstrap working -->
+<script defer type="text/javascript" src="{{ BASE_URL }}/js/bootstrap-3.1.1.min.js"></script>
+<!-- //for bootstrap working -->
+ 
+ <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Glegoo:400,700" media="none" onload="if(media!=='all')media='all'" >
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic" media="none" onload="if(media!=='all')media='all'" >
+<!-- start-smooth-scrolling -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+ 
+<!-- //end-smooth-scrolling -->
+<script defer type="text/javascript"> //<![CDATA[ 
+var tlJsHost = ((window.location.protocol == "https:") ? "https://secure.comodo.com/" : "http://www.trustlogo.com/");
+document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/trustlogo.js' type='text/javascript'%3E%3C/script%3E"));
+//]]>
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-129050782-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-129050782-1');
+</script>
+
+<style>
+h6 {
+    margin-top: 7px;
+}
+</style>
+</head>
+{% flush %}
+	
+<body>
+{{ ob_start | raw }}
+
+<!-- header -->	
+
+{# {% include "template_womensfashion.snippets.modal-signin-register" %} #}
+
+{% include "template_womensfashion.blocks.header" %}
+
+{% include "template_womensfashion.blocks.nav" %}
+
+<!-- //header -->
+
+<!-- banner -->
+	<!-- <div class="banner2" id="home1">
+		<div class="container">
+			<h2>Women sweaters<span>up to</span> Flat 40% <i>Discount</i></h2>
+		</div>
+	</div> -->
+<!-- //banner -->
+
+{# <div class="banner10" style="background: url('../storage/uploads/{{PRODUCT.PRODUCT_MAIN_IMAGE}}_300X400.jpg') no-repeat 0px 0px;background-size:cover;
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover; 
+	-ms-background-size:cover;
+	min-height:300px;
+    filter: grayscale(100%);" id="home1">
+		<div class="container">
+			<h2 style="color: #ffffff;">{{ DETAIL.CATEGORY_MERCH }}</h2>
+		</div>
+</div> #}
+<!-- breadcrumbs --> 
+
+{% include "template_womensfashion.snippets.breadcrumb" %}
+
+<!-- //breadcrumbs -->
+
+
+<!-- display banner -->
+
+{# {% include "template_womensfashion.blocks.new-products" %} #}
+
+{# {% include "template_womensfashion.blocks.display-editor-choices" %} #}	
+
+<!-- //display banner -->
+ <script src="{{ BASE_URL }}/js/jquery.min.js"></script>
+
+<!-- detail -->
+{% include "template_womensfashion.blocks.content-detail" %}
+	 
+	 
+<!-- //detail -->
+
+
+{# {% include "template_womensfashion.blocks.detail-additional-information" %} #}
+
+
+<!-- related-product -->
+
+
+{% include "template_womensfashion.snippets.detail-related-product" %}
+
+<!-- //related-product -->
+
+<!-- top-brands -->
+ 
+
+{% include "template_womensfashion.blocks.top-brands" %}
+
+<!-- //top-brands -->
+
+
+<!-- footer -->
+
+{% include "template_womensfashion.blocks.footer" %}
+
+<!-- //footer -->
+
+<script>
+
+$(document).ready(function() {
+	 
+
+	 
+ 	function cartAnimation(x) {
+    	$('#animation-cart').removeClass().addClass(x + ' animated delay-10s').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+      		$(this).removeClass();
+  	  	});
+ 	};
+
+
+
+	
+	$('.item_add').on('click', function () {
+		NProgress.start();				     
+		var baseUrl = $(this).data('base');
+		var price = $(this).data('price');
+ 		var id  = $(this).data('id');
+		var name = $(this).data('name');
+		var picture = $(this).data('picture');  
+		 	
+	 			
+		$.ajax({
+			type: "GET",
+			url: baseUrl + '/add/cart/'+price+'/'+id+'/'+name+'/'+picture,
+			success: function( msg ) {
+				if(msg!='add to cart'){
+					NProgress.done();
+					alert(msg);
+	            } 
+				else{
+					$('html, body').animate({
+       					scrollTop: $(".header").offset().top
+ 					}, 400);
+					cartAnimation("lightSpeedIn");
+					$(".cart").load(" .cart");						            
+					 
+					NProgress.done();
+				}			
+			}
+		});  
+	});
+
+	$('.simpleCart_empty').on('click', function (e) {
+		e.preventDefault();
+		NProgress.start();
+		var baseUrl = $('.base_url').val() ;                 
+		$.ajax({
+		    type : "GET",
+		    url : baseUrl + '/cart/destroy/',
+		    success: function() {
+		        cartAnimation("zoomOutDown");
+		        $(".total").load(" .total");
+		        NProgress.done();
+		    }
+		});    
+	});
+
+ 
+
+});
+
+</script>
+
+<script>
+function init() {
+	var imgDefer = document.getElementsByTagName('img');
+	for (var i=0; i<imgDefer.length; i++) {
+		if(imgDefer[i].getAttribute('data-src')) {
+			imgDefer[i].setAttribute('src',imgDefer[i].getAttribute('data-src'));
+		}
+	} 
+}
+window.onload = init;
+</script>
+
+</body>
+</html>

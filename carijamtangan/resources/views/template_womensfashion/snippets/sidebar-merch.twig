@@ -1,0 +1,19 @@
+<div class="w3ls_dresses_grid_left_grid">
+	<h3>Brand Categories</h3>
+		<div class="w3ls_dresses_grid_left_grid_sub">
+							<ul class="panel_bottom">
+								{% for MERCH in GET_MERCH %}
+										<li style="{# border-bottom:1px dashed silver;  #}"><b><a style=""href="{{ BASE_URL }}/brand/{{ MERCH.CATEGORY_NAME_SLUG|lower }}/{{ MERCH.CATEGORY_MERCH_SLUG|lower }}">
+									 
+							{% set twig_content_variable =  MERCH.CATEGORY_MERCH %}
+							{% set replace_value_var =  'ORIGINAL' %}
+							{% set replace_with_value_var =  ' ' %}
+								{{ twig_content_variable|replace({ (replace_value_var): replace_with_value_var }) }}
+								{% if MERCH.CATEGORY_ORIGINAL == 1 %}
+									 <small><label class="label label-danger">ORIGINAL</label ></small>    
+								{% endif %} </a></b></li>
+								{% endfor %}
+								
+							</ul>
+						</div>
+</div>

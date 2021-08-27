@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title  -->
+    <title>Cari Jam Tangan</title>
+
+    <!-- Favicon  -->
+    <link rel="icon" href="/mobile-assets/img/core-img/favicon.ico">
+
+    <!-- Core Style CSS -->
+    <link rel="stylesheet" href="/mobile-assets/css/core-style.css">
+    <link rel="stylesheet" href="/mobile-assets/style.css">
+
+    <!-- Responsive CSS -->
+    <link href="/mobile-assets/css/responsive.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="{{ BASE_URL }}/css/animate.min.css" media="none" onload="if(media!=='all')media='all'" >
+
+<style>
+.top-discount-area .single-discount-area:last-child {
+	background : linear-gradient(90deg, rgb(199, 90, 227) 0%, rgb(108, 43, 200) 35%, rgb(204, 46, 172) 100%) !important;
+}
+blink {
+    -webkit-animation: 1s linear infinite condemned_blink_effect; // for android
+    animation: 2s linear infinite condemned_blink_effect;
+}
+@-webkit-keyframes condemned_blink_effect { // for android
+    0% {
+        visibility: hidden;
+    }
+    50% {
+        visibility: hidden;
+    }
+    100% {
+        visibility: visible;
+    }
+}
+@keyframes condemned_blink_effect {
+    0% {
+        visibility: hidden;
+    }
+    50% {
+        visibility: hidden;
+    }
+    100% {
+        visibility: visible;
+    }
+}
+</style>
+</head>
+
+<body>
+
+	{% include "template_karl_mobile.blocks.menubar" %}
+
+
+         
+
+	<div id="wrapper">
+
+		{% include "template_karl_mobile.blocks.header" %}
+		
+		  <section class="top-discount-area d-md-flex align-items-center">
+            <!-- Single Discount Area -->
+          
+            <!-- Single Discount Area -->
+        <a href="https://carijamtangan.com/brand/watch/all-hot-sale"><div class="single-discount-area" style="">
+                <blink><h5>Diskon Sampe 40 %</h5>
+
+                <h6> HOT SALE BURUAN !! Klik Disini </h6></blink>
+            </div>
+        </section></a>
+	
+		{# {% include "template_karl_mobile.snippets.breadcrumb" %} #}
+		
+		 
+            <section class="top_catagory_area d-md-flex clearfix">
+        {#         <!-- Single Catagory -->
+                 <div class="single_catagory_area d-flex align-items-center bg-img" style="background-image: url(/mobile-assets/img/bg-img/bg-2.jpg);">
+                    <div class="catagory-content">
+                        <h6>On Accesories</h6>
+                        <h2>Sale 30%</h2>
+                        <a href="#" class="btn karl-btn">SHOP NOW</a>
+                    </div>
+                </div> 
+                <!-- Single Catagory --> #}
+                <div class="single_catagory_area d-flex align-items-center bg-img" style="background-image:url('https://data.whicdn.com/images/232803918/large.png');">
+                    <div class="catagory-content">
+                        <h6>Koleksi Jam Sepasang buat yang tercinta</h6>
+                        <h2>Couple Watch</h2>
+                        <a href="https://carijamtangan.com/brand/watch/couple" class="btn karl-btn">SHOP NOW</a>
+                    </div>
+                </div>
+            </section>
+          	
+			<br/>
+						<br/>
+								 
+			
+			{% include "template_karl_mobile.snippets.product-home" %} 
+			
+			
+			
+			{% include "template_karl_mobile.blocks.footer" %}
+  
+	
+	</div>
+
+
+   <!-- jQuery (Necessary for All JavaScript Plugins) -->
+    <script src="{{ BASE_URL }}/mobile-assets/js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="{{ BASE_URL }}/mobile-assets/js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="{{ BASE_URL }}/mobile-assets/js/bootstrap.min.js"></script>
+    <!-- Plugins js -->
+    <script src="{{ BASE_URL }}/mobile-assets/js/plugins.js"></script>
+    <!-- Active js -->
+    <script src="{{ BASE_URL }}/mobile-assets/js/active.js"></script>
+
+  <script>
+
+    $(document).ready(function() {
+
+    function cartAnimation(x) {
+        $('#animation-cart').removeClass().addClass(x + ' animated delay-10s').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+            $(this).removeClass();
+        });
+    };
+
+       $('.beli').on('click', function () {
+        var baseUrl = $(this).data('base');
+        var price = $(this).data('price');
+        var id  = $(this).data('id');
+        var name = $(this).data('name');
+        var picture = $(this).data('picture'); 
+
+        $.ajax({
+            type: "GET",
+            url: baseUrl + '/add/cart/'+price+'/'+id+'/'+name+'/'+picture,
+            success: function( msg ) {
+                if(msg!='add to cart'){
+                    alert(msg);
+                    return;
+
+                }
+                else{
+
+                    
+             $('html, body').animate({
+                scrollTop: $(".header_area").offset().top
+            }, 400);
+             cartAnimation("rubberBand");
+                    $(".cart").load(" .cart");                                    
+                   
+                }           
+            }
+        }); 
+        });
+    });
+
+    </script>
+
+
+    <script>
+    function init() {
+        var imgDefer = document.getElementsByTagName('img');
+        for (var i=0; i<imgDefer.length; i++) {
+            if(imgDefer[i].getAttribute('data-src')) {
+                imgDefer[i].setAttribute('src',imgDefer[i].getAttribute('data-src'));
+            }
+        } 
+    }
+    window.onload = init;
+    </script>
+</body>
+</html>
+
+

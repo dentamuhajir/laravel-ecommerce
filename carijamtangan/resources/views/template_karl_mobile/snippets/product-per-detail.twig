@@ -1,0 +1,104 @@
+      <!-- <<<<<<<<<<<<<<<<<<<< Single Product Details Area Start >>>>>>>>>>>>>>>>>>>>>>>>> -->
+        <section class="single_product_details_area section_padding_0_100">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-12 col-md-6">
+                        <div class="single_product_thumb" style="margin-bottom:0px;">
+                            <div id="product_details_slider" class="carousel slide" data-ride="carousel">
+{# 
+                                <ol class="carousel-indicators">
+                                    <li class="active" data-target="#product_details_slider" data-slide-to="0" style="background-image: url(/mobile-assets/img/product-img/product-9.jpg);">
+                                    </li>
+                                    <li data-target="#product_details_slider" data-slide-to="1" style="background-image: url(/mobile-assets/img/product-img/product-2.jpg);">
+                                    </li>
+                                    <li data-target="#product_details_slider" data-slide-to="2" style="background-image: url(/mobile-assets/img/product-img/product-3.jpg);">
+                                    </li>
+                                    <li data-target="#product_details_slider" data-slide-to="3" style="background-image: url(/mobile-assets/img/product-img/product-4.jpg);">
+                                    </li>
+                                </ol> #}
+
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <a class="gallery_img" href="{{ BASE_URL  }}/timthumb.php?src=/photo/{{DETAIL.PRODUCT_MAIN_IMAGE}}.jpg&h=500&w=400&zc=1">
+                                        <img class="d-block w-100" src="{{BASE_URL}}/images/logo/image-placeholder.gif" style="height:300px;" data-src="{{ BASE_URL  }}/timthumb.php?src=/photo/{{DETAIL.PRODUCT_MAIN_IMAGE}}.jpg&h=300&w=300&zc=1" alt="First slide">
+                                    </a>
+                                    </div>
+                                  {#   <div class="carousel-item">
+                                        <a class="gallery_img" href="/mobile-assets/img/product-img/product-2.jpg">
+                                        <img class="d-block w-100" src="img/product-img/product-2.jpg" alt="Second slide">
+                                    </a>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <a class="gallery_img" href="/mobile-assets/img/product-img/product-3.jpg">
+                                        <img class="d-block w-100" src="img/product-img/product-3.jpg" alt="Third slide">
+                                    </a>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <a class="gallery_img" href="/mobile-assets/img/product-img/product-4.jpg">
+                                        <img class="d-block w-100" src="img/product-img/product-4.jpg" alt="Fourth slide">
+                                    </a>
+                                    </div> #}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <div class="single_product_desc" style="margin-top: 30px">
+
+                            <h4 class="title">{{ DETAIL.PRODUCT_NAME }}</h4>
+
+                            <ul>
+							<li><a href="#" class="facebook"> </a></li>
+							<li><a href="#" class="twitter"> </a></li>
+							<li><a href="#" class="google"> </a></li>
+							<li><a href="#" class="pinterest"> </a></li>
+						</ul>
+
+						 <p class="available">Available: <span class="text-muted">In Stock</span></p>
+
+
+                            <h4 class="price" style="color: #FF9B05;"><sup><small style="text-decoration: line-through;color:silver;">Rp {{(DETAIL.PRODUCT_CJT_PRICE+DETAIL.PRODUCT_PROFIT)|number_format(0, ',', '.')}} </small></sup> Rp {{DETAIL.PRODUCT_CJT_PRICE|number_format(0, ',', '.')}},00</h4>
+
+                           
+                     {#        <div class="single_product_ratings mb-15">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                            </div> #}
+
+                           
+
+                            <!-- Add to Cart Form -->
+                      
+
+                            <div id="accordion" role="tablist">
+                                <div class="card">
+                                    <div class="card-header" role="tab" id="headingOne">
+                                        <h6 class="mb-0">
+                                            <a data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Deskripsi</a>
+                                        </h6>
+                                    </div>
+
+                                    <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+                                        <div class="card-body" style="font-size: initial;">
+                                           {{ DETAIL.PRODUCT_DESCRIPTION | trim('</p> </div> </div> </div> </div> <div id=".') | raw }}.
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                           
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="javascript:;"  data-base="{{BASE_URL}}"  data-id="{{DETAIL.PRODUCT_CJT_CODE}}" data-name="{{DETAIL.PRODUCT_NAME}}" data-picture="{{DETAIL.PRODUCT_MAIN_IMAGE}}" data-price="{{DETAIL.PRODUCT_CJT_PRICE}}" class="addtocart_"><i class="ti-shopping-cart"></i> ADD TO CART </a>
+            <a href="https://wa.me/6281385800400?text='{{BASE_URL}}/detail/{{DETAIL.PRODUCT_ID}}-{{DETAIL.PRODUCT_NAME_SLUG}}.html' ---- MAU NANYA TENTANG PRODUK INI DONG KAK . . ." class="chat"><i class="ti-themify-favicon-alt"></i> CHAT DULU </a>
+        </section>
+        <!-- <<<<<<<<<<<<<<<<<<<< Single Product Details Area End >>>>>>>>>>>>>>>>>>>>>>>>> -->

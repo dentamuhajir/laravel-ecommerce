@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title  -->
+    <title>Cari Jam Tangan</title>
+
+    <!-- Favicon  -->
+    <link rel="icon" href="/mobile-assets/img/core-img/favicon.ico">
+
+    <!-- Core Style CSS -->
+
+    <link rel="stylesheet" href="{{ BASE_URL }}/css/nprogress.css" media="none" onload="if(media!=='all')media='all'" >
+    <link rel="stylesheet" href="{{ BASE_URL }}/css/animate.min.css" media="none" onload="if(media!=='all')media='all'" >
+    <script defer src="{{ BASE_URL }}/js/nprogress.js"></script>
+    <link rel="stylesheet" href="{{ BASE_URL }}/mobile-assets/css/core-style.css">
+    <link rel="stylesheet" href="{{ BASE_URL }}/mobile-assets/style.css">
+
+    <!-- Responsive CSS -->
+    <link href="{{ BASE_URL }}/mobile-assets/css/responsive.css" rel="stylesheet">
+    
+    <style>
+    .addtocart_ {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 50%;
+        text-align: center;
+        padding: 10px 0;
+        background-color: #ef6907;
+        color: white;
+        font-weight: 800;
+        z-index: 99;
+    }
+    .chat{
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 50%;
+        text-align: center;
+        padding: 10px 0;
+        background-color: #51c551;
+        color: white;
+        font-weight: 800;
+        z-index: 99;
+    }
+    .card-body {
+        padding-left: 0px;
+        font-family: sans-serif;
+    }
+    
+    .single_product_desc .card-header {
+        padding: 30px 0px;
+    }
+    .section_padding_0_100 {
+        padding: 0 0 60px;
+    }
+    .product-description {
+        padding-bottom: 15px;
+    }
+    #scrollUp{
+        z-index: 1 !important;
+    }
+    
+    </style>
+
+</head>
+
+<body>
+
+	{% include "template_karl_mobile.blocks.menubar" %}
+
+	<div id="wrapper">
+
+		{% include "template_karl_mobile.blocks.header" %}
+	
+		{% include "template_karl_mobile.snippets.breadcrumb" %}
+   
+ 		{% include "template_karl_mobile.snippets.product-per-detail" %}
+
+        {% include "template_karl_mobile.snippets.related-product" %}
+        
+        {% include "template_karl_mobile.blocks.footer" %}
+	
+	</div>
+
+
+   <!-- jQuery (Necessary for All JavaScript Plugins) -->
+    <script src="{{ BASE_URL }}/mobile-assets/js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="{{ BASE_URL }}/mobile-assets/js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="{{ BASE_URL }}/mobile-assets/js/bootstrap.min.js"></script>
+    <!-- Plugins js -->
+    <script src="{{ BASE_URL }}/mobile-assets/js/plugins.js"></script>
+    <!-- Active js -->
+    <script src="{{ BASE_URL }}/mobile-assets/js/active.js"></script>
+<script>
+
+    $(document).ready(function() {
+
+
+    function cartAnimation(x) {
+        $('#animation-cart').removeClass().addClass(x + ' animated delay-10s').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+            $(this).removeClass();
+        });
+    };
+
+       $('.beli').on('click', function () {
+        // NProgress.start();
+        var baseUrl = $(this).data('base');
+		var price = $(this).data('price');
+ 		var id  = $(this).data('id');
+		var name = $(this).data('name');
+		var picture = $(this).data('picture'); 
+
+		$.ajax({
+			type: "GET",
+			url: baseUrl + '/add/cart/'+price+'/'+id+'/'+name+'/'+picture,
+			success: function( msg ) {
+				if(msg!='add to cart'){
+					//NProgress.done();
+					alert(msg);
+	            }
+				else{
+
+					
+             $('html, body').animate({
+                scrollTop: $(".header_area").offset().top
+            }, 400);
+             cartAnimation("rubberBand");
+					$(".cart").load(" .cart");						            
+					//NProgress.done();
+				}			
+			}
+		}); 
+        });
+    });
+
+    </script>
+     <script>
+    function init() {
+        var imgDefer = document.getElementsByTagName('img');
+        for (var i=0; i<imgDefer.length; i++) {
+            if(imgDefer[i].getAttribute('data-src')) {
+                imgDefer[i].setAttribute('src',imgDefer[i].getAttribute('data-src'));
+            }
+        } 
+    }
+    window.onload = init;
+    </script>
+</body>
+</html>
+
+

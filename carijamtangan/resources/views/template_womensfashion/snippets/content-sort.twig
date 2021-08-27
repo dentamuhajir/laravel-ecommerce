@@ -1,0 +1,27 @@
+<div class="w3ls_dresses_grid_right_grid2">
+	 						<div class="w3ls_dresses_grid_right_grid2_left">
+							<h3> {% if GET_NAME_MERCH == '' %}
+							<b>JAM TANGAN ALL BRANDS</b>
+							&nbsp; | Total Katalog : {{ COUNT_PRODUCT }} Produk  </h3>
+							{% elseif PAGE_TODAY_NEW == 1  %}
+								<b style="background: black;color: white;">&nbsp;BARU MASUK HARI INI </b> 	
+							 &nbsp; | Menampilkan : {{ GET_PRODUCT|length }} Produk  </h3>
+								
+							{% else %}
+							<b style="background: black;color: white;">&nbsp;JAM {{ GET_NAME_MERCH }} </b> 	
+							 &nbsp; | Menampilkan : {{ GET_PRODUCT|length }} Produk  </h3>
+							
+							{% endif %}
+						</div>
+						{# <div class="w3ls_dresses_grid_right_grid2_right">
+							<select name="select_item" class="select_item">
+								<option value="random" selected="selected">Urutkan Acak</option>
+								<option value="harga-termurah">Harga termurah</option>
+								<option value="harga-termahal">Harga termahal</option>
+								<option value="produk-terbaru">Produk Terbaru</option>
+							
+							</select>
+						</div> #}
+						<div class="clearfix"> </div>
+					</div>
+			 
